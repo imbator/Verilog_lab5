@@ -1,0 +1,125 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'CLOCK_50'
+Slack : -3.391
+TNS   : -75.788
+
+Type  : Slow Model Setup 'one_hundred_sec[1]~reg0'
+Slack : -1.734
+TNS   : -11.587
+
+Type  : Slow Model Setup 'one_sec[1]~reg0'
+Slack : -1.132
+TNS   : -7.207
+
+Type  : Slow Model Setup 'one_tenth_sec[1]~reg0'
+Slack : -1.042
+TNS   : -5.847
+
+Type  : Slow Model Setup 'tenth_sec[1]~reg0'
+Slack : -0.963
+TNS   : -5.483
+
+Type  : Slow Model Hold 'tenth_sec[1]~reg0'
+Slack : -2.735
+TNS   : -16.213
+
+Type  : Slow Model Hold 'CLOCK_50'
+Slack : -2.695
+TNS   : -24.394
+
+Type  : Slow Model Hold 'one_tenth_sec[1]~reg0'
+Slack : -2.479
+TNS   : -15.019
+
+Type  : Slow Model Hold 'one_hundred_sec[1]~reg0'
+Slack : -2.261
+TNS   : -15.312
+
+Type  : Slow Model Hold 'one_sec[1]~reg0'
+Slack : -2.102
+TNS   : -13.894
+
+Type  : Slow Model Minimum Pulse Width 'CLOCK_50'
+Slack : -1.631
+TNS   : -44.401
+
+Type  : Slow Model Minimum Pulse Width 'one_hundred_sec[1]~reg0'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'one_sec[1]~reg0'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'one_tenth_sec[1]~reg0'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'tenth_sec[1]~reg0'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Setup 'CLOCK_50'
+Slack : -0.931
+TNS   : -12.768
+
+Type  : Fast Model Setup 'one_hundred_sec[1]~reg0'
+Slack : -0.072
+TNS   : -0.352
+
+Type  : Fast Model Setup 'one_sec[1]~reg0'
+Slack : 0.079
+TNS   : 0.000
+
+Type  : Fast Model Setup 'tenth_sec[1]~reg0'
+Slack : 0.129
+TNS   : 0.000
+
+Type  : Fast Model Setup 'one_tenth_sec[1]~reg0'
+Slack : 0.168
+TNS   : 0.000
+
+Type  : Fast Model Hold 'CLOCK_50'
+Slack : -1.724
+TNS   : -18.245
+
+Type  : Fast Model Hold 'tenth_sec[1]~reg0'
+Slack : -1.579
+TNS   : -10.147
+
+Type  : Fast Model Hold 'one_tenth_sec[1]~reg0'
+Slack : -1.495
+TNS   : -9.662
+
+Type  : Fast Model Hold 'one_sec[1]~reg0'
+Slack : -1.385
+TNS   : -9.319
+
+Type  : Fast Model Hold 'one_hundred_sec[1]~reg0'
+Slack : -1.347
+TNS   : -9.291
+
+Type  : Fast Model Minimum Pulse Width 'CLOCK_50'
+Slack : -1.380
+TNS   : -36.380
+
+Type  : Fast Model Minimum Pulse Width 'one_hundred_sec[1]~reg0'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'one_sec[1]~reg0'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'one_tenth_sec[1]~reg0'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'tenth_sec[1]~reg0'
+Slack : 0.500
+TNS   : 0.000
+
+------------------------------------------------------------
