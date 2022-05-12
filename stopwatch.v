@@ -9,7 +9,9 @@ output reg [18:0] impulses,
 output reg [3:0] one_hundred_sec,
 output reg [3:0] one_tenth_sec,
 output reg [3:0] one_sec,
-output reg [3:0] tenth_sec
+output reg [3:0] tenth_sec,
+output reg start
+
 );
 
 
@@ -22,36 +24,46 @@ initial one_tenth_sec = 4'b0;
 initial one_sec = 4'b0;
 initial tenth_sec = 4'b0;
 
+assign INV_KEY_1 = ~KEY[1];
+assign INV_KEY_0 = ~KEY[0];
+initial start = 1;
 
-always @( posedge CLOCK_50 or posedge KEY[1] ) begin
-	if (KEY[1]) begin
+
+always @( posedge CLOCK_50 or posedge INV_KEY_1 or posedge INV_KEY_0) begin
+	if (INV_KEY_1) begin
 		one_hundred_sec <= 4'b0;
 		one_tenth_sec <= 4'b0;
 		one_sec <= 4'b0;
 		tenth_sec <= 4'b0;	
 	end else begin
-		impulses <= impulses + 1;
-		if (impulses == 19'b1111010000100011111) begin
-			one_hundred_sec <= one_hundred_sec + 1;
-			impulses <= 19'b0;
-		end
-		if (one_hundred_sec == 4'b1010) begin
-			one_tenth_sec <= one_tenth_sec + 1;
-			one_hundred_sec <= 0;
-		end
-		if (one_tenth_sec == 4'b1010) begin
-			one_sec <= one_sec + 1;
-			one_tenth_sec <= 0;
-		end
-		if (one_sec == 4'b1010) begin
-			tenth_sec <= tenth_sec + 1;
-			one_sec <= 0;
-		end
-		if (tenth_sec == 4'b1010) begin
-			one_hundred_sec <= 4'b0;
-			one_tenth_sec <= 4'b0;
-			one_sec <= 4'b0;
-			tenth_sec <= 4'b0;
+		if (INV_KEY_0) begin
+			start = ~start;
+		end else begin	
+		if (start) begin
+			impulses <= impulses + 1;
+			if (impulses == 19'b1111010000100011111) begin
+				one_hundred_sec <= one_hundred_sec + 1;
+				impulses <= 19'b0;
+			end
+			if (one_hundred_sec == 4'b1010) begin
+				one_tenth_sec <= one_tenth_sec + 1;
+				one_hundred_sec <= 0;
+			end
+			if (one_tenth_sec == 4'b1010) begin
+				one_sec <= one_sec + 1;
+				one_tenth_sec <= 0;
+			end
+			if (one_sec == 4'b1010) begin
+				tenth_sec <= tenth_sec + 1;
+				one_sec <= 0;
+			end
+			if (tenth_sec == 4'b1010) begin
+				one_hundred_sec <= 4'b0;
+				one_tenth_sec <= 4'b0;
+				one_sec <= 4'b0;
+				tenth_sec <= 4'b0;
+			end
+			end
 		end
 	end
 case(one_hundred_sec)
