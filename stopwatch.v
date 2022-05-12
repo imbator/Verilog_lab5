@@ -15,18 +15,21 @@ output reg start
 );
 
 
-initial HEX0 = 7'b1111111;
-initial HEX1 = 7'b1111111;
-initial HEX2 = 7'b1111111;
-initial HEX3 = 7'b1111111;
-initial one_hundred_sec = 4'b0;
-initial one_tenth_sec = 4'b0;
-initial one_sec = 4'b0;
-initial tenth_sec = 4'b0;
-
+initial
+begin
+HEX0 = 7'b1111111;
+HEX1 = 7'b1111111;
+HEX2 = 7'b1111111;
+HEX3 = 7'b1111111;
+one_hundred_sec = 4'b0;
+one_tenth_sec = 4'b0;
+one_sec = 4'b0;
+tenth_sec = 4'b0;
+start = 1;
+end
 assign INV_KEY_1 = ~KEY[1];
 assign INV_KEY_0 = ~KEY[0];
-initial start = 1;
+
 
 
 always @( posedge CLOCK_50 or posedge INV_KEY_1 or posedge INV_KEY_0) begin
